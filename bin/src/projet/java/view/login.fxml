@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-image: url('/bgf.jpg');" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.java.controlers.LoginControlller">
+   <children>
+      <AnchorPane layoutX="261.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="478.0" style="-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 1px; -fx-border-radius: 5px;">
+         <children>
+            <Label layoutX="173.0" layoutY="28.0" text="Se connecter en tant que" />
+            <Label layoutX="60.0" layoutY="206.0" prefHeight="23.0" prefWidth="352.0" text="Identifiant" />
+            <Label layoutX="60.0" layoutY="282.0" prefHeight="23.0" prefWidth="352.0" text="Mot de passe" />
+            <TextField fx:id="login" layoutX="60.0" layoutY="235.0" prefHeight="26.0" prefWidth="352.0" />
+            <PasswordField fx:id="mdp" layoutX="60.0" layoutY="312.0" prefHeight="26.0" prefWidth="352.0" />
+            <Label onMouseClicked="#mdpOublie" layoutX="304.0" layoutY="341.0" text="Mot de passe oublié" />
+            <Button fx:id="btnConnexion" layoutX="126.0" layoutY="436.0" mnemonicParsing="false" onAction="#isValid" prefWidth="105.0" text="Se connecter">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnAnnuler" layoutX="250.0" layoutY="436.0" mnemonicParsing="false" onAction="#close" prefWidth="105.0" text="Annuler">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label fx:id="erreur" layoutX="115.0" layoutY="175.0" prefHeight="17.0" prefWidth="368.0" text="" textFill="RED" />
+            <RadioButton fx:id="btnFormateur" layoutX="60.0" layoutY="75.0" mnemonicParsing="false" onAction="#getUserFormateur" onMouseClicked="#paneFormateur" text="Formateur">
+               <toggleGroup>
+                  <ToggleGroup fx:id="group" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="bntResponsable" layoutX="60.0" layoutY="110.0" mnemonicParsing="false" onAction="#getUserResponsable" onMouseClicked="#paneResponsable" text="Responsable Filiére" toggleGroup="$group" />
+            <RadioButton fx:id="bntAdmin" layoutX="60.0" layoutY="145.0" mnemonicParsing="false" onAction="#getUserAdmin" onMouseClicked="#paneAdmin" text="Administration" toggleGroup="$group" />
+            <Pane fx:id="adminPane" layoutX="255.0" layoutY="74.0" prefHeight="89.0" prefWidth="117.0" visible="false">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="18.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/admin.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="formateurPane" layoutX="255.0" layoutY="74.0" prefHeight="89.0" prefWidth="117.0" visible="false">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="18.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/formateur.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="responsablePane" layoutX="265.0" layoutY="74.0" prefHeight="89.0" prefWidth="117.0" visible="false">
+               <children>
+                  <ImageView fitHeight="58.0" fitWidth="57.0" layoutX="18.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/responsable.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="388.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/001-avatar.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="389.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/002-password.png" />
+               </image>
+            </ImageView>
+            <Pane fx:id="acceuilPane" layoutX="265.0" layoutY="78.0" prefHeight="89.0" prefWidth="117.0">
+               <children>
+                  <ImageView fitHeight="58.0" fitWidth="57.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/exchange.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </AnchorPane>
+   </children>
+</AnchorPane>

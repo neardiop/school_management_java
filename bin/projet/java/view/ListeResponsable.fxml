@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="projet.java.controlers.ResponsableController">
+    <children>
+        <TextField fx:id="txtRecherche" layoutX="207.0" layoutY="85.0" prefHeight="25.0" prefWidth="169.0"
+                   promptText="ID"/>
+        <Button layoutX="387.0" layoutY="86.0" mnemonicParsing="false" onAction="#rechercherResponsable"
+                text="Recherhe"/>
+        <Pane layoutX="-1.0" prefHeight="75.0" prefWidth="1000.0"
+              style="-fx-background-color: #A1C1F4; -fx-background-image: url('/bgf.jpg');" AnchorPane.leftAnchor="-1.0"
+              AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="50.0" layoutY="5.0" text="Gestion Responsable Filiére">
+                    <font>
+                        <Font size="30.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="88.0" layoutY="44.0" text="Application de gestion des évaluations"/>
+            </children>
+        </Pane>
+        <TableView fx:id="tableau" layoutX="207.0" layoutY="121.0" onMouseClicked="#afficherResponsableAUpdate"
+                   prefHeight="433.0" prefWidth="782.0" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="207.0"
+                   AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="121.0">
+            <columns>
+                <TableColumn fx:id="id" maxWidth="100.0" minWidth="40.0" prefWidth="65.33335876464844" text="ID"/>
+                <TableColumn fx:id="nom" prefWidth="137.33334350585938" text="Nom"/>
+                <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="22.666656494140625" text="Prénom"/>
+                <TableColumn fx:id="adresse" prefWidth="75.0" text="Adresse"/>
+                <TableColumn fx:id="sexe" prefWidth="75.0" text="Sexe"/>
+                <TableColumn fx:id="telephone" prefWidth="75.0" text="Téléphone"/>
+                <TableColumn fx:id="email" prefWidth="75.0" text="E-amil"/>
+                <TableColumn fx:id="login" prefWidth="75.0" text="Login"/>
+                <TableColumn fx:id="password" prefWidth="75.0" text="Mot de passe"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+        <Label layoutX="560.0" layoutY="89.0" text="Supprimer"/>
+        <Button layoutX="626.0" layoutY="86.0" mnemonicParsing="false" onAction="#confirmationSuppression" text="-"/>
+        <RadioButton fx:id="choixInscrire" layoutX="6.0" layoutY="83.0" mnemonicParsing="false"
+                     onAction="#attributInscrire" text="Inscrire">
+            <toggleGroup>
+                <ToggleGroup fx:id="group"/>
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="choixMiseAJour" layoutX="77.0" layoutY="84.0" mnemonicParsing="false"
+                     onAction="#attributInscrire" text="Mettre à jour" toggleGroup="$group"/>
+        <TextField fx:id="txtNumResponsable" layoutX="10.0" layoutY="135.0" promptText="ID"/>
+        <TextField fx:id="txtNom" layoutX="10.0" layoutY="172.0" promptText="Nom"/>
+        <TextField fx:id="txtPrenom" layoutX="10.0" layoutY="209.0" promptText="Prénom"/>
+        <TextField fx:id="txtAdresse" layoutX="10.0" layoutY="246.0" promptText="Adresse"/>
+        <TextField fx:id="txtSexe" layoutX="10.0" layoutY="283.0" promptText="sexe"/>
+        <TextField fx:id="txtTelephone" layoutX="10.0" layoutY="320.0" promptText="Téléphone"/>
+        <TextField fx:id="txtEmail" layoutX="10.0" layoutY="356.0" promptText="E-mail"/>
+        <TextField fx:id="txtLogin" layoutX="10.0" layoutY="393.0" promptText="Login"/>
+        <TextField fx:id="txtPwd" layoutX="11.0" layoutY="430.0" promptText="Password"/>
+        <Button fx:id="btnInscrire" layoutX="107.0" layoutY="471.0" mnemonicParsing="false"
+                onAction="#decisionButtonValider" text="Valider"/>
+        <Separator layoutX="174.0" layoutY="75.0" orientation="VERTICAL" prefHeight="527.0" prefWidth="21.0"
+                   AnchorPane.bottomAnchor="-2.0" AnchorPane.topAnchor="75.0"/>
+        <TextArea fx:id="resultat" layoutX="11.0" layoutY="524.0" prefHeight="64.0" prefWidth="149.0"
+                  promptText="Résultat" AnchorPane.bottomAnchor="12.0"/>
+        <Button fx:id="btnRetourner" layoutX="898.0" layoutY="566.0" mnemonicParsing="false" onAction="#retourner"
+                text="Page d'acceuil"/>
+        <RadioButton fx:id="choixDetail" layoutX="5.0" layoutY="109.0" mnemonicParsing="false"
+                     onAction="#detailResponsable" text="Information d'un responsabe" toggleGroup="$group"/>
+        <Pane fx:id="detail" layoutY="128.0" prefHeight="413.0" prefWidth="167.0" visible="false">
+            <children>
+                <ComboBox fx:id="mesFilieres" layoutX="9.0" layoutY="23.0" onMouseClicked="#mesFiliere"
+                          prefWidth="150.0" promptText="Mes Filiéres"/>
+                <ComboBox fx:id="ajoutFilieres" layoutX="9.0" layoutY="69.0" onMouseClicked="#lesFilieres"
+                          prefWidth="150.0" promptText="Ajouter une filiére"/>
+                <Button fx:id="btnAjouter" layoutX="103.0" layoutY="109.0" mnemonicParsing="false"
+                        onMouseClicked="#ajoutModuleAFiliere" text="Ajouter"/>
+                <ComboBox fx:id="retirerFiliere" layoutX="9.0" layoutY="149.0" onMouseClicked="#mesFilieresARetirer"
+                          prefWidth="150.0" promptText="Retirer une filiére"/>
+                <Button layoutX="105.0" layoutY="194.0" mnemonicParsing="false" text="Retirer"/>
+            </children>
+        </Pane>
+        <Button fx:id="importer" layoutX="873.0" layoutY="86.0" mnemonicParsing="false" text="Import"/>
+        <Button fx:id="exporter" layoutX="936.0" layoutY="86.0" mnemonicParsing="false" text="Export"/>
+        <TextField fx:id="txtBrowser" layoutX="709.0" layoutY="86.0"/>
+        <Button fx:id="btnBrowser" layoutX="686.0" layoutY="86.0" mnemonicParsing="false" text="\@"/>
+    </children>
+</AnchorPane>

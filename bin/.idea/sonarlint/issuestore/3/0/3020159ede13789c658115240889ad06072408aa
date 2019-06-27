@@ -1,0 +1,8 @@
+
+hsquid:S22590"JA "NullPointerException" could be thrown; "getInstance()" can return null.(£ˆ½š8÷à½Şş,
+jsquid:S20954"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(Üÿìæùÿÿÿÿ8÷à½Şş,
+Lsquid:S2115")Add password protection to this database.(ï”»œúÿÿÿÿ8Ù‰Ûş,
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ù‰Ûş,
+dsquid:S11265"AReplace this if-then-else statement by a single return statement.(ïï÷èúÿÿÿÿ8Ù‰Ûş,
+Gsquid:S3010"$Remove this assignment of "connect".(ï”»œúÿÿÿÿ8Ù‰Ûş,
+msquid:S20950"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(£ˆ½š8÷à½Şş,

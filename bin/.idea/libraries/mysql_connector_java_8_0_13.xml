@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="mysql-connector-java-8.0.13">
+    <CLASSES>
+      <root url="jar://D:/DAR319/Java/eclipse-workspace/POC_JDBC/lib/mysql-connector-java-8.0.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/poi-3.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/poi-ooxml-3.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/xmlbeans-2.6.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/poi-ooxml-schemas-3.7-beta1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/commons-codec-1.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/commons-collections4-4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/poi-3.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/itextpdf-5.5.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

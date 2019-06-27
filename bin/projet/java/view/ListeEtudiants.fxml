@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" onMouseClicked="#initialiser" prefHeight="600.0" prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="projet.java.controlers.EtudiantController">
+    <children>
+        <TextField fx:id="txtRecherche" layoutX="193.0" layoutY="123.0" prefHeight="25.0" prefWidth="169.0"/>
+        <Button fx:id="btnRecherche" layoutX="376.0" layoutY="123.0" mnemonicParsing="false"
+                onMouseClicked="#rechercherEtudiant" text="Recherhe">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Pane prefHeight="105.0" prefWidth="1000.0" style="-fx-background-color: #A1C1F4;" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="60.0" layoutY="20.0" text="Gestion Etudiant">
+                    <font>
+                        <Font size="30.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="72.0" layoutY="65.0" text="Application de gestion des évalution"/>
+            </children>
+        </Pane>
+        <TableView fx:id="tableau" editable="true" layoutX="183.0" layoutY="166.0"
+                   onMouseClicked="#afficherEtudiantAupdate" prefHeight="396.0" prefWidth="803.0"
+                   tableMenuButtonVisible="true" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="183.0"
+                   AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="166.0">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="105.3333410024643" text="ID"/>
+                <TableColumn fx:id="nom" onEditCommit="#onEditChanged" prefWidth="98.66669464111328" text="Nom"/>
+                <TableColumn fx:id="prenom" prefWidth="111.33334350585938" text="Prénom"/>
+                <TableColumn fx:id="dateDeNaissance" prefWidth="124.6666259765625" text="Date de Naissance"/>
+                <TableColumn fx:id="sexe" prefWidth="32.00006103515625" text="Sexe"/>
+                <TableColumn fx:id="telephone" prefWidth="118.6666259765625" text="Téléphone"/>
+                <TableColumn fx:id="email" prefWidth="75.0" text="E-mail"/>
+                <TableColumn fx:id="filiereEtudiant" minWidth="-1.0" prefWidth="72.66668701171875" text="Filiére"/>
+                <TableColumn fx:id="adresse" prefWidth="75.0" text="Adresse"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+        <Label layoutX="577.0" layoutY="127.0" text="Supprimer"/>
+        <Button fx:id="btnSupprimer" layoutX="644.0" layoutY="123.0" mnemonicParsing="false"
+                onMouseClicked="#supprimerEtudiant" text="-">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <AnchorPane layoutY="105.0" prefHeight="494.0" prefWidth="185.0" AnchorPane.bottomAnchor="1.0"
+                    AnchorPane.topAnchor="105.0">
+            <children>
+                <TextField fx:id="txtNumEtudiant" layoutX="15.0" layoutY="41.0" promptText="ID"/>
+                <TextField fx:id="txtNom" layoutX="15.0" layoutY="78.0" promptText="Nom"/>
+                <TextField fx:id="txtPrenom" layoutX="15.0" layoutY="115.0" promptText="Prénom"/>
+                <DatePicker fx:id="dateNaissance" layoutX="15.0" layoutY="153.0" prefHeight="25.0" prefWidth="149.0"
+                            promptText="Date de Naissance"/>
+                <TextField fx:id="txtSexe" layoutX="15.0" layoutY="190.0" promptText="Sexe"/>
+                <TextField fx:id="txtTelephone" layoutX="15.0" layoutY="227.0" promptText="Téléphone"/>
+                <TextField fx:id="txtEmail" layoutX="14.0" layoutY="265.0" promptText="E-mail"/>
+                <TextField fx:id="txtAdresse" layoutX="14.0" layoutY="301.0" promptText="Adresse"/>
+                <ComboBox fx:id="filiereChoice" layoutX="14.0" layoutY="339.0" prefWidth="150.0" promptText="Filiére"/>
+                <Button fx:id="btnInscrire" layoutX="110.0" layoutY="377.0" mnemonicParsing="false"
+                        onAction="#decisionButtonValider" text="Valider">
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+                <Separator layoutX="172.0" layoutY="2.0" orientation="VERTICAL" prefHeight="494.0" prefWidth="13.0"
+                           AnchorPane.bottomAnchor="-2.0" AnchorPane.topAnchor="2.0"/>
+                <TextArea fx:id="resultat" layoutX="16.0" layoutY="410.0" prefHeight="45.0" prefWidth="149.0"
+                          promptText="Résultat"/>
+                <RadioButton fx:id="choixInscrire" layoutX="14.0" layoutY="14.0" mnemonicParsing="false"
+                             text="Inscrire">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="group"/>
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="choixMiseAJour" layoutX="81.0" layoutY="14.0" mnemonicParsing="false"
+                             text="Mettre à jour" toggleGroup="$group"/>
+            </children>
+        </AnchorPane>
+        <Button fx:id="btnRetourner" layoutX="900.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#retourner"
+                text="Page d'acceuil" AnchorPane.bottomAnchor="4.666666666666668"
+                AnchorPane.rightAnchor="14.666666666666671">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Button fx:id="importer" layoutX="876.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#importerXL"
+                text="Import"/>
+        <Button fx:id="exporter" layoutX="934.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#exporterXL"
+                text="Export"/>
+        <TextField fx:id="txtBrowser" layoutX="719.0" layoutY="123.0"/>
+        <Button fx:id="btnBrowser" layoutX="696.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#fileUploed"
+                text="\@"/>
+        <Button fx:id="btnActualise" layoutX="465.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#actualise"
+                text="Actualiser">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+    </children>
+</AnchorPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0"
+            style="-fx-background-image: url('/bgf.jpg');" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="projet.java.controlers.AcceuilResponsableController">
+    <children>
+        <AnchorPane prefHeight="109.0" prefWidth="1000.0" style="-fx-background-color: #A1C1F4;">
+            <children>
+                <Label fx:id="bienvenu" layoutX="63.0" layoutY="27.0" prefHeight="38.0" prefWidth="479.0"
+                       text="Bienvenue">
+                    <font>
+                        <Font size="26.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="106.0" layoutY="70.0" prefHeight="19.0" prefWidth="239.0"
+                       text="Application de gestion des évaluations">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Button alignment="CENTER_RIGHT" layoutX="873.0" layoutY="548.0" mnemonicParsing="false" onAction="#deconnexion"
+                prefHeight="38.0" prefWidth="108.0" text="Déconnexion">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <ComboBox fx:id="mesFilieres" layoutX="156.0" layoutY="383.0" prefHeight="64.0"
+                  prefWidth="150.0" promptText="Mes Filiéres" style="-fx-background-image: url('/bgf.jpg');">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ComboBox>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="156.0" layoutY="236.0" pickOnBounds="true"
+                   preserveRatio="true" style="-fx-background-image: url('/bgf.jpg');">
+            <image>
+                <Image url="@../../../images/filiere.jpg"/>
+            </image>
+        </ImageView>
+        <ComboBox fx:id="action" layoutX="435.0" layoutY="383.0" prefHeight="64.0" prefWidth="150.0"
+                  promptText="Séléctionner une Action" style="-fx-background-image: url('/bgf.jpg');">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ComboBox>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="435.0" layoutY="236.0" pickOnBounds="true"
+                   preserveRatio="true" style="-fx-background-image: url('/bgf.jpg');">
+            <image>
+                <Image url="@../../../images/270563-P5U2V2-583.jpg"/>
+            </image>
+        </ImageView>
+        <Button fx:id="btnValider" layoutX="675.0" layoutY="311.0" mnemonicParsing="false"
+                onAction="#decisionBtnValider" prefHeight="51.0" prefWidth="139.0" text="Valider">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Label fx:id="erreur" layoutX="328.0" layoutY="177.0" prefHeight="25.0" prefWidth="364.0"
+               style="-fx-text-alignment: center;"
+               text="Veuillez sélectionner une filiére et l'action souhaitée svp !!! " visible="false">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <ImageView fitHeight="19.0" fitWidth="18.0" layoutX="880.0" layoutY="559.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../../../images/logout-sign.png"/>
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

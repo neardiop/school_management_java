@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="projet.java.controlers.ModuleController">
+    <children>
+        <TextField fx:id="txtRecherche" layoutX="214.0" layoutY="116.0" prefHeight="25.0" prefWidth="91.0"/>
+        <Button layoutX="313.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#rechercheModule"
+                text="Recherhe"/>
+        <Pane prefHeight="101.0" prefWidth="1000.0" style="-fx-background-color: #A1C1F4;" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="47.0" layoutY="17.0" text="Gestion Module">
+                    <font>
+                        <Font size="30.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="79.0" layoutY="61.0" text="Application de gestion des évaluation"/>
+            </children>
+        </Pane>
+        <TableView fx:id="tableau" layoutX="212.0" layoutY="155.0" onMouseClicked="#afficherModuleUpdate"
+                   prefHeight="402.0" prefWidth="762.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="212.0"
+                   AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="155.0">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="105.3333410024643" text="ID"/>
+                <TableColumn fx:id="nom" prefWidth="98.66669464111328" text="Intitulé"/>
+                <TableColumn fx:id="coefficient" prefWidth="75.0" text="coéfficient"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+        <Button fx:id="btnSupprimer" layoutX="541.0" layoutY="116.0" mnemonicParsing="false"
+                onMouseClicked="#supprimerModule" text="-"/>
+        <TextField fx:id="numModule" layoutX="25.0" layoutY="237.0" promptText="ID"/>
+        <TextField fx:id="intitule" layoutX="25.0" layoutY="278.0" promptText="Intitulé"/>
+        <Button fx:id="btnValider" layoutX="118.0" layoutY="359.0" mnemonicParsing="false"
+                onMouseClicked="#decisionValider" text="Valider"/>
+        <Separator layoutX="181.0" layoutY="101.0" orientation="VERTICAL" prefHeight="501.0" prefWidth="21.0"
+                   AnchorPane.bottomAnchor="-2.0" AnchorPane.topAnchor="101.0"/>
+        <TextArea fx:id="resultat" layoutX="24.0" layoutY="425.0" prefHeight="58.0" prefWidth="149.0"
+                  promptText="Résultat"/>
+        <Button fx:id="btnRetourner" layoutX="882.0" layoutY="566.0" mnemonicParsing="false" onMouseClicked="#retourner"
+                text="Page d'acceuil" AnchorPane.bottomAnchor="8.666666666666668" AnchorPane.rightAnchor="26.0">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <TextField fx:id="coeff" layoutX="24.0" layoutY="320.0" promptText="coefficient"/>
+        <RadioButton fx:id="choixInscrire" layoutX="25.0" layoutY="182.0" mnemonicParsing="false" text="Insérer">
+            <toggleGroup>
+                <ToggleGroup fx:id="group"/>
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="choixMiseAJour" layoutX="25.0" layoutY="207.0" mnemonicParsing="false" text="Mettre à jour"
+                     toggleGroup="$group"/>
+        <Button fx:id="importer" layoutX="861.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#importerXL"
+                text="Import"/>
+        <Button fx:id="exporter" layoutX="924.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#exporterXL"
+                text="Export"/>
+        <TextField fx:id="txtBrowser" layoutX="697.0" layoutY="116.0"/>
+        <Button fx:id="btnBrowser" layoutX="674.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#fileUploed"
+                text="\@"/>
+        <Button fx:id="btnActualiser" layoutX="394.0" layoutY="117.0" mnemonicParsing="false"
+                onMouseClicked="#actualise" text="Actualiser"/>
+        <Label layoutX="483.0" layoutY="121.0" text="Supprimer"/>
+        <Button fx:id="btnVoirNotes" layoutX="589.0" layoutY="116.0" mnemonicParsing="false"
+                onMouseClicked="#displayNotes" text="Voir notes"/>
+    </children>
+</AnchorPane>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.java.controlers.FormateurController">
+   <children>
+      <TextField fx:id="txtRecherche" layoutX="199.0" layoutY="81.0" prefHeight="25.0" prefWidth="169.0" promptText="ID" />
+      <Button layoutX="379.0" layoutY="82.0" mnemonicParsing="false" onAction="#rechercherFormateur" text="Recherhe" />
+      <Pane prefHeight="64.0" prefWidth="1000.0" style="-fx-background-color: #A1C1F4; -fx-background-image: url('/bgf.jpg');" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="50.0" layoutY="1.0" text="Gestion Formateur">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="88.0" layoutY="41.0" text="Application de gestion des évaluations" />
+         </children>
+      </Pane>
+      <TableView fx:id="tableau" layoutX="199.0" layoutY="121.0" onMouseClicked="#afficherFormateurAUpdate" prefHeight="433.0" prefWidth="782.0" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="121.0">
+        <columns>
+          <TableColumn fx:id="id" maxWidth="100.0" minWidth="40.0" prefWidth="65.33335876464844" text="ID" />
+          <TableColumn fx:id="nom" prefWidth="137.33334350585938" text="Nom" />
+            <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="22.666656494140625" text="Prénom" />
+            <TableColumn fx:id="adresse" prefWidth="75.0" text="Adresse" />
+            <TableColumn fx:id="sexe" prefWidth="75.0" text="Sexe" />
+            <TableColumn fx:id="telephone" prefWidth="75.0" text="Téléphone" />
+            <TableColumn fx:id="email" prefWidth="75.0" text="E-amil" />
+            <TableColumn fx:id="statut" prefWidth="75.0" text="Statut" />
+            <TableColumn fx:id="login" prefWidth="75.0" text="Login" />
+            <TableColumn fx:id="password" prefWidth="75.0" text="Mot de passe" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label layoutX="539.0" layoutY="85.0" text="Supprimer" />
+      <Button layoutX="605.0" layoutY="82.0" mnemonicParsing="false" onAction="#confirmationSuppression" text="-" />
+      <RadioButton fx:id="choixInscrire" layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#attributInscrire" text="Inscrire">
+         <toggleGroup>
+            <ToggleGroup fx:id="group" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="choixMiseAJour" layoutX="77.0" layoutY="73.0" mnemonicParsing="false" onAction="#attributInscrire" text="Mettre à jour" toggleGroup="$group" />
+      <TextField fx:id="txtNumFormateur" layoutX="10.0" layoutY="124.0" promptText="ID" />
+      <TextField fx:id="txtNom" layoutX="10.0" layoutY="161.0" promptText="Nom" />
+      <TextField fx:id="txtPrenom" layoutX="10.0" layoutY="198.0" promptText="Prénom" />
+      <TextField fx:id="txtAdresse" layoutX="10.0" layoutY="235.0" promptText="Adresse" />
+      <TextField fx:id="txtSexe" layoutX="10.0" layoutY="272.0" promptText="sexe" />
+      <TextField fx:id="txtTelephone" layoutX="10.0" layoutY="309.0" promptText="Téléphone" />
+      <TextField fx:id="txtEmail" layoutX="10.0" layoutY="345.0" promptText="E-mail" />
+      <TextField fx:id="txtLogin" layoutX="10.0" layoutY="382.0" promptText="Login" />
+      <TextField fx:id="txtPwd" layoutX="11.0" layoutY="419.0" promptText="Password" />
+      <ComboBox fx:id="txtStatut" layoutX="10.0" layoutY="455.0" prefWidth="150.0" promptText="Statut" />
+      <Button fx:id="btnInscrire" layoutX="108.0" layoutY="492.0" mnemonicParsing="false" onAction="#decisionButtonValider" text="Valider" />
+      <Separator layoutX="172.0" layoutY="64.0" orientation="VERTICAL" prefHeight="538.0" prefWidth="21.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.topAnchor="64.0" />
+      <TextArea fx:id="resultat" layoutX="11.0" layoutY="529.0" prefHeight="55.0" prefWidth="149.0" promptText="Résultat" AnchorPane.bottomAnchor="16.0" />
+      <Button fx:id="btnRetourner" layoutX="889.0" layoutY="566.0" mnemonicParsing="false" onAction="#retourner" text="Page d'acceuil" />
+      <RadioButton fx:id="choixDetailFormateur" layoutX="9.0" layoutY="98.0" mnemonicParsing="false" onAction="#detailFormateur" text="Information d'un formateur" toggleGroup="$group" />
+      <Pane fx:id="detailFormateur" layoutY="117.0" prefHeight="413.0" prefWidth="167.0" visible="false">
+         <children>
+            <ComboBox fx:id="mesModules" layoutX="9.0" layoutY="23.0" onMouseClicked="#mesModules" prefWidth="150.0" promptText="Mes modules" />
+            <ComboBox fx:id="ajoutModules" layoutX="9.0" layoutY="69.0" onMouseClicked="#lesModules" prefWidth="150.0" promptText="Ajouter un module" />
+            <Button layoutX="103.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#ajoutModuleAFormateur" text="Ajouter" />
+            <ComboBox fx:id="retirerModule" layoutX="9.0" layoutY="149.0" onMouseClicked="#mesModulesARetirer" prefWidth="150.0" promptText="Retirer un module" />
+            <Button layoutX="105.0" layoutY="194.0" mnemonicParsing="false" text="Retirer" />
+         </children>
+      </Pane>
+      <Button fx:id="importer" layoutX="868.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#importerXL" text="Import" />
+      <Button fx:id="exporter" layoutX="931.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#exporterXL" text="Export" />
+      <TextField fx:id="txtBrowser" layoutX="704.0" layoutY="82.0" />
+      <Button fx:id="btnBrowser" layoutX="681.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#fileUploed" text="\@" />
+      <Button layoutX="454.0" layoutY="81.0" mnemonicParsing="false" onAction="#actualise" text="Actualiser" />
+   </children>
+</AnchorPane>
